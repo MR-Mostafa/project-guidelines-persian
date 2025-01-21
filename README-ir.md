@@ -35,7 +35,7 @@
 - [سبک کدنویسی (Code Style)](#code-style)
   - [برخی اصول Code Style](#code-style-check)
   - [اعمال استانداردهای کدنویسی](#enforcing-code-style-standards)
-- [ثبت وقایع/Logging](#logging)
+- [ثبت وقایع (Logging)](#logging)
 - [ای‌پی‌آی/API](#api)
   - [طراحی API](#api-design)
   - [امنیت ای‌پی‌آی/API security](#api-security)
@@ -600,23 +600,23 @@ _چرا:_
 
 <a name="logging"></a>
 
-## 8. ثبت وقایع/Logging
+## 8. ثبت وقایع (Logging)
 
 <p align="right">
   <img src="/images/logging.png" alt="Logging" width="128" height="128">
 </p>
 
-- از استفاده از console.log در سمت کلاینت در محیط production خودداری کنید.
+- استفاده از `console.log` در سمت کلاینت و در محیط Production خودداری کنید.
 
 _چرا:_
 
-> حتی اگر فرآیند build برنامه شما می‌تواند (و باید) آن‌ لاگ‌ها را حذف کند، اطمینان حاصل کنید که ابزار بررسی استایل کدنویسی شما درباره‌ی باقی‌مانده‌های console.log هشدار می‌دهد.
+> حتی اگر فرآیند Build شما لاگ‌ها را حذف می‌کند (که بهتر است حتماً این کار را انجام دهد)، به ابزار بررسی سبک کدنویسی (Lint) خود اجازه دهید باقی‌مانده‌های `console.log` را تشخیص و به شما هشدار دهد.
 
-- برای تولید لاگ‌های خوانا در محیط production، بهتر است از کتابخانه‌های logging مناسب (مانند [winston](https://github.com/winstonjs/winston) یا [node-bunyan](https://github.com/trentm/node-bunyan)) استفاده کنید.
+- برای تولید لاگ‌های خوانا در محیط production، بهتر است از کتابخانه‌های لاگ مناسب استفاده کنید (مانند [winston](https://github.com/winstonjs/winston) یا [node-bunyan](https://github.com/trentm/node-bunyan)).
 
 _چرا:_
 
-> این کار عیب‌یابی را آسان‌تر و دلپذیرتر می‌کند، چون می‌توانید از قابلیت‌هایی مانند رنگ‌بندی، افزودن زمان به لاگ‌ها، ثبت لاگ‌ها در فایل علاوه بر کنسول و حتی ثبت لاگ‌ها در فایل‌هایی که به‌صورت روزانه ایجاد و بایگانی می‌شوند، استفاده کنید. [توضیحات بیشتر ...](https://blog.risingstack.com/node-js-logging-tutorial/)
+> به‌جای `console.log`، از کتابخانه‌هایی نظیر Winston یا node-bunyan استفاده کنید. این ابزارها امکاناتی مانند رنگ‌بندی، زمان‌بندی، و ثبت لاگ‌ها در فایل (علاوه بر کنسول) و حتی ثبت روزانه و بایگانی آن‌ها را در اختیار شما می‌گذارند. این قابلیت‌ها فرایند عیب‌یابی را آسان‌تر و کارآمدتر می‌کند. ([توضیحات بیشتر ...](https://blog.risingstack.com/node-js-logging-tutorial/))
 
 <a name="api"></a>
 
